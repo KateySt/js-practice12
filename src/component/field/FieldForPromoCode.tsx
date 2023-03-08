@@ -28,15 +28,9 @@ const FieldForPromoCode: React.FC = (): JSX.Element => {
     const pairedOrUnpaired = (array: number[], paired: boolean): number => {
         if (paired) {
             return array.filter(el => el % 2)
-                .filter((item, pos) => {
-                    return array.indexOf(item) == pos;
-                })
                 .reduce((acc, number) => acc + number, 0);
         }
         return array.filter(el => (!(el % 2)))
-            .filter((item, pos) => {
-                return array.indexOf(item) == pos;
-            })
             .reduce((acc, number) => acc + number, 0);
     }
 
