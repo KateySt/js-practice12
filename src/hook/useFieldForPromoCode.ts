@@ -26,7 +26,8 @@ function useFieldForPromoCode() {
     const filtration = (arr: number[]): [number, number] [] => {
         return Array.from(arr.entries())
             .filter(el => el[1] !== 0)
-            .filter(el => el[0] !== el[0] + 1);
+            .filter(el => el[0] !== el[0] + 1)
+            .slice(0, 2);
     }
 
     const pairedOrUnpaired = (array: number[], paired: boolean): number => {
